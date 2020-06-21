@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <version>${version}</version>
+    <packaging>pom</packaging>
+    <name>${artifactId}-parent</name>
+
+    <modules>
+        <module>${rootArtifactId}-starter</module>
+        <module>${rootArtifactId}-common</module>
+        <module>${rootArtifactId}-config</module>
+        <module>${rootArtifactId}-dao</module>
+        <module>${rootArtifactId}-facade</module>
+        <module>${rootArtifactId}-service</module>
+        <module>${rootArtifactId}-web</module>
+    </modules>
+
+    <properties>
+        <parent-project.version>1.0-SNAPSHOT</parent-project.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-facade</artifactId>
+                <version>${parent-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-service</artifactId>
+                <version>${parent-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-config</artifactId>
+                <version>${parent-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-common</artifactId>
+                <version>${parent-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-dao</artifactId>
+                <version>${parent-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-web</artifactId>
+                <version>${parent-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-starter</artifactId>
+                <version>${parent-project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
